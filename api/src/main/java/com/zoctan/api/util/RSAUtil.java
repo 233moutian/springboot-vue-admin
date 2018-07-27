@@ -95,10 +95,10 @@ public class RSAUtil {
         dis.close();
 
         final String temp = new String(keyBytes);
-        String publicKeyPEM = temp.replace(headReplace, "");
-        publicKeyPEM = publicKeyPEM.replace(tailReplace, "");
+//        String publicKeyPEM = temp.replace(headReplace, "");
+//        publicKeyPEM = publicKeyPEM.replace(tailReplace, "");
 
-        return Base64.decodeBase64(publicKeyPEM);
+        return Base64.decodeBase64(temp);
     }
 
     /**

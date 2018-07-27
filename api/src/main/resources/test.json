@@ -1,0 +1,149 @@
+{
+  "code": 200,
+  "data": {
+    "endRow": 3,
+    "firstPage": 1,
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "lastPage": 1,
+    "list": [
+      {
+        "author": "author0",
+        "comment_disabled": false,
+        "content": "content0",
+        "content_short": "content_short0",
+        "display_time": "2018-07-27 14:29:16",
+        "forecast": 0,
+        "id": 0,
+        "image_uri": "image_uri",
+        "pageviews": 0,
+        "reviewer": "reviewer0",
+        "timestamp": "2018-07-27 14:29:16",
+        "title": "title0"
+      },
+      {
+        "$ref": "$.data.list[0]"
+      },
+      {
+        "$ref": "$.data.list[0]"
+      },
+      {
+        "$ref": "$.data.list[0]"
+      }
+    ],
+    "navigateFirstPage": 1,
+    "navigateLastPage": 1,
+    "navigatePages": 8,
+    "navigatepageNums": [
+      1
+    ],
+    "nextPage": 0,
+    "pageNum": 1,
+    "pageSize": 4,
+    "pages": 1,
+    "prePage": 0,
+    "size": 4,
+    "startRow": 0,
+    "total": 4
+  },
+  "msg": "OK"
+}
+,
+{
+  "code": 200,
+  "data": {
+    "endRow": 3,
+    "firstPage": 1,
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "lastPage": 1,
+    "list": [
+      {
+        "id": 1,
+        "name": "ROLE_ADMIN",
+        "resourceList": []
+      },
+      {
+        "id": 3,
+        "name": "ROLE_TEST",
+        "resourceList": [
+          {
+            "resource": "user",
+            "handleList": [
+              {
+                "handle": "list",
+                "id": 1
+              },
+              {
+                "handle": "add",
+                "id": 2
+              },
+              {
+                "handle": "update",
+                "id": 3
+              },
+              {
+                "handle": "delete",
+                "id": 4
+              }
+            ]
+          },
+          {
+            "resource": "role",
+            "handleList": [
+              {
+                "handle": "list",
+                "id": 5
+              },
+              {
+                "handle": "add",
+                "id": 6
+              },
+              {
+                "handle": "update",
+                "id": 7
+              },
+              {
+                "handle": "delete",
+                "id": 8
+              }
+            ]
+          },
+          {
+            "resource": "article",
+            "handleList": [
+              {
+                "handle": "list",
+                "id": 9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "ROLE_USER",
+        "resourceList": []
+      }
+    ],
+    "navigateFirstPage": 1,
+    "navigateLastPage": 1,
+    "navigatePages": 8,
+    "navigatepageNums": [
+      1
+    ],
+    "nextPage": 0,
+    "pageNum": 1,
+    "pageSize": 30,
+    "pages": 1,
+    "prePage": 0,
+    "size": 3,
+    "startRow": 1,
+    "total": 11
+  },
+  "msg": "OK"
+}
