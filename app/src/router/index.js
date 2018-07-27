@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // in development env not use Lazy Loading,because Lazy Loading too many pages will cause webpack hot update too slow.so only in production use Lazy Loading
 
 /* layout */
-import Layout from '../views/layout/Layout'
+import Layout from '../views/layout/Layout.vue'
 
 const _import = require('./_import_' + process.env.NODE_ENV)
 
@@ -68,6 +68,22 @@ export const asyncRouterMap = [
       component: _import('user/index'),
       meta: { permission: ['user:list'] }
     }]
+  },
+
+  {
+    path: '/excel',
+    component: Layout,
+    redirect: '/excel/export-excel',
+    name: 'excel',
+    meta: {
+      title: 'excel',
+      icon: 'excel'
+    },
+    children: [
+      { path: 'export-excel', component: () => import('@/views/excel/exportExcel'), name: 'exportExcel', meta: { title: 'exportExcel' }},
+      { path: 'export-selected-excel', component: () => import('@/views/excel/selectExcel'), name: 'selectExcel', meta: { title: 'selectExcel' }},
+      { path: 'upload-excel', component: () => import('@/views/excel/uploadExcel'), name: 'uploadExcel', meta: { title: 'uploadExcel' }}
+    ]
   },
 
   {

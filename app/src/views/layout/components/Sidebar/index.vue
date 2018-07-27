@@ -1,7 +1,7 @@
 <template>
   <!-- http://element-cn.eleme.io/#/zh-CN/component/menu -->
   <el-menu mode="vertical" :default-active="$route.path">
-    <sidebar-item :routes="permissionRouters"/>
+    <sidebar-item :routes="permissionRouters"></sidebar-item>
   </el-menu>
 </template>
 
