@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 身份认证过滤器
+ * 身份认证过滤器 || 使用cors解决跨域问题
  *
  * @author Zoctan
  * @date 2018/06/09

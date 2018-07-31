@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Json web token配置
- *
+ *  直接读application-dev.properties里面的内容
  * @author Zoctan
  * @date 2018/06/09
  */

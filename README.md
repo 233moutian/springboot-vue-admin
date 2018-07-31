@@ -8,6 +8,7 @@
 
 后端 Spring Boot 模板来自[种子项目](https://github.com/Zoctan/spring-boot-api-seedling.git)，详细请看 [api](https://github.com/Zoctan/spring-boot-vue-admin/tree/master/api)。
 
+使用cors解决跨域问题
 ## 预览
 
 <img src="https://github.com/Zoctan/spring-boot-vue-admin/blob/master/README/1.png"/>
@@ -37,7 +38,7 @@ SpringBoot | 2.0.2
 
 ```markdown
 # 克隆项目
-git clone https://github.com/Zoctan/spring-boot-vue-admin.git
+git clone https://github.com/233moutian/spring-boot-vue-admin.git
 
 # 进入项目
 cd spring-boot-vue-admin
@@ -72,6 +73,3 @@ npm run dev
 npm ERR! enoent ENOENT: no such file or directory, rename '/workspace/spring-boot-vue-admin/app/node_modules/.staging/css-loader-b931fe48/node_modules/ansi-styles' -> '/workspace/spring-boot-vue-admin/app/node_modules/.staging/ansi-styles-6535fafb'
 ```
 
-## 更新日志
-
-2018-06-10 由于 Redis 主要充当缓存数据库，但在该项目没起多大作用，故而移除 Redis。注意，如果需要在注销时使得 token 无效就需要搭配使用 Redis，可以自行根据种子项目进行添加。
