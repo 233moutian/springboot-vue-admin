@@ -75,7 +75,7 @@
         <el-form-item label="Role name" prop="name" required>
           <el-input type="text" prefix-icon="el-icon-edit" auto-complete="off"
                     v-model="tempRole.name">
-            <template v-if="dialogStatus === 'add'" slot="prepend">ROLE_</template>
+            <template v-if="dialogStatus === 'add'" slot="prepend"/>
           </el-input>
         </el-form-item>
         <el-form-item label="Permission" required>
@@ -132,11 +132,7 @@
        * @param callback 回调
        */
       const validateRoleName = (rule, value, callback) => {
-        let roleName = value
-        if (this.dialogStatus === 'add') {
-          roleName = 'ROLE_' + roleName
-        }
-        if (!isValidateRoleName(roleName)) {
+        if (!isValidateRoleName(value)) {
           callback(new Error('role name format error. eg. ROLE_ABC'))
         } else {
           callback()

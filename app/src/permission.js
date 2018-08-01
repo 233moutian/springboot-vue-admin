@@ -12,9 +12,10 @@ router.beforeEach((to, from, next) => {
   if (getToken()) {
     // 有token
     if (to.path === '/login') {
-      // 但下一跳是登陆页
+      // 但请求的是登陆页
       // 转到首页
       next({ path: '/' })
+      // 如果没有token
     } else {
       // 如果没有角色名
       if (store.getters.roleName === null) {

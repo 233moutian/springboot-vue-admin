@@ -23,14 +23,14 @@ export const constantRouterMap = [
   {
     path: '',
     component: Layout,
-    redirect: 'dashboard',
+    redirect: 'permission',
     icon: 'dashboard',
     noDropDown: true,
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: _import('dashboard/index'),
-      meta: { title: 'dashboard', noCache: true }
+      path: 'permission',
+      name: 'Permission',
+      component: _import('permission/index'),
+      meta: { title: 'permission', noCache: true }
     }]
   }
 ]
