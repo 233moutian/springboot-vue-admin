@@ -117,8 +117,5 @@ if (request.getMethod().equals("OPTIONS")) {
 }
 ```
 
-## redis 缓存
-
-项目默认开了 redis 服务，密码 root。
-
-如不需要请清除所有 redis 相关代码。
+分页请看
+https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md

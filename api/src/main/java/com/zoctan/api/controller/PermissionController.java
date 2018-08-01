@@ -5,12 +5,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zoctan.api.core.response.Result;
 import com.zoctan.api.core.response.ResultGenerator;
+import com.zoctan.api.model.Permission;
 import com.zoctan.api.service.PermissionService;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -35,4 +33,37 @@ public class PermissionController {
         final PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genOkResult(pageInfo);
     }
+
+    @PreAuthorize("hasAuthority('permission:list')")
+    @GetMapping("listPermission")
+    public Result listPermission(@RequestParam(defaultValue = "0") final Integer page,
+                                         @RequestParam(defaultValue = "0") final Integer size) {
+        PageHelper.startPage(page, size);
+        final List<Permission> list = this.permissionService.findAll();
+        //noinspection unchecked
+        final PageInfo pageInfo = new PageInfo(list);
+        return ResultGenerator.genOkResult(pageInfo);
+    }
+
+    @PreAuthorize("hasAuthority('permission:add')")
+    @PostMapping
+    public Result add(@RequestBody final Permission permission) {
+        this.permissionService.save(permission);
+        return ResultGenerator.genOkResult();
+    }
+
+    @PreAuthorize("hasAuthority('permission:delete')")
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable final Long id) {
+        this.permissionService.deleteById(id);
+        return ResultGenerator.genOkResult();
+    }
+
+    @PreAuthorize("hasAuthority('permission:update')")
+    @PutMapping
+    public Result update(@RequestBody final Permission permission) {
+        this.permissionService.update(permission);
+        return ResultGenerator.genOkResult();
+    }
+
 }
