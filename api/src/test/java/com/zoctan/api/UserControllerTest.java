@@ -1,8 +1,11 @@
 package com.zoctan.api;
 
+import com.zoctan.api.util.RSAUtil;
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class UserControllerTest extends BaseControllerTest {
@@ -17,11 +20,18 @@ public class UserControllerTest extends BaseControllerTest {
      */
     @Test(timeout = 5000)
     public void login() throws Exception {
-        this.mockMvc.perform(post(this.url + this.resource + "/login")
+        /*this.mockMvc.perform(post(this.url + this.resource + "/login")
                         .param("username", "admin")
                         .param("password", "admin"));
-//                .andExpect(status().isOk())
-//                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-//                .andReturn();
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andReturn();*/
+        RSAUtil rsaUtil = new RSAUtil();
+        final PublicKey publicKey = rsaUtil.loadPemPublicKey("rsa/public-key.pem");
+        final PrivateKey privateKey = rsaUtil.loadPemPrivateKey("rsa/private-key.pem");
+        Assert.assertNotNull(publicKey);
+        Assert.assertNotNull(privateKey);
+        System.out.println("公钥：" + publicKey);
+        System.out.println("私钥：" + privateKey);
     }
 }
