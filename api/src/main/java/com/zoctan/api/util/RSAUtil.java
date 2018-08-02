@@ -111,8 +111,8 @@ public class RSAUtil {
         try {
             final byte[] decoded = this.replaceAndBase64Decode(
                     pem,
-                    "-----BEGIN PUBLIC KEY-----",
-                    "\n-----END PUBLIC KEY-----"
+                    "-----BEGIN PUBLIC KEY-----\n",
+                    "-----END PUBLIC KEY-----"
             );
             final X509EncodedKeySpec spec = new X509EncodedKeySpec(decoded);
             final KeyFactory keyFactory = KeyFactory.getInstance(this.algorithm);
@@ -133,8 +133,8 @@ public class RSAUtil {
         try {
             final byte[] decoded = this.replaceAndBase64Decode(
                     pem,
-                    "-----BEGIN PRIVATE KEY-----",
-                    "\n-----END PRIVATE KEY-----"
+                    "-----BEGIN PRIVATE KEY-----\n",
+                    "-----END PRIVATE KEY-----"
             );
             final PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decoded);
             final KeyFactory keyFactory = KeyFactory.getInstance(this.algorithm);
