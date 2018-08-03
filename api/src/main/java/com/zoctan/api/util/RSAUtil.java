@@ -84,7 +84,7 @@ public class RSAUtil {
         return cipher.doFinal(content);
     }
 
-    private byte[] replaceAndBase64Decode(final String file, final String headReplace, final String tailReplace) throws Exception {
+    private byte[] replaceAndBase64Decode(final String file/*, final String headReplace, final String tailReplace*/) throws Exception {
         final ResourceLoader loader = new DefaultResourceLoader();
         final Resource resource = loader.getResource(file);
         final File f = resource.getFile();
@@ -95,10 +95,10 @@ public class RSAUtil {
         dis.close();
 
         final String temp = new String(keyBytes);
-        String KeyPEM = temp.replace(headReplace, "");
-        KeyPEM = KeyPEM.replace(tailReplace, "");
-        System.out.println("KeyPEM : " + KeyPEM);
-        return Base64.decodeBase64(KeyPEM);
+//        String KeyPEM = temp.replace(headReplace, "");
+//        KeyPEM = KeyPEM.replace(tailReplace, "");
+        System.out.println("KeyPEM : " + temp);
+        return Base64.decodeBase64(temp);
     }
 
     /**
@@ -110,9 +110,9 @@ public class RSAUtil {
     public PublicKey loadPemPublicKey(final String pem) {
         try {
             final byte[] decoded = this.replaceAndBase64Decode(
-                    pem,
+                    pem/*,
                     "-----BEGIN PUBLIC KEY-----\n",
-                    "-----END PUBLIC KEY-----"
+                    "-----END PUBLIC KEY-----"*/
             );
             final X509EncodedKeySpec spec = new X509EncodedKeySpec(decoded);
             final KeyFactory keyFactory = KeyFactory.getInstance(this.algorithm);
@@ -132,9 +132,9 @@ public class RSAUtil {
     public PrivateKey loadPemPrivateKey(final String pem) {
         try {
             final byte[] decoded = this.replaceAndBase64Decode(
-                    pem,
+                    pem/*,
                     "-----BEGIN PRIVATE KEY-----\n",
-                    "-----END PRIVATE KEY-----"
+                    "-----END PRIVATE KEY-----"*/
             );
             final PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decoded);
             final KeyFactory keyFactory = KeyFactory.getInstance(this.algorithm);
