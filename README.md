@@ -11,7 +11,7 @@
 使用cors解决跨域问题
 ## 预览
 
-<img src="https://github.com/Zoctan/spring-boot-vue-admin/blob/master/README/1.png"/>
+<img src="https://github.com/233moutian/springboot-vue-admin/blob/master/README/1.png"/>
 
 <img src="https://github.com/Zoctan/spring-boot-vue-admin/blob/master/README/2.png"/>
 
